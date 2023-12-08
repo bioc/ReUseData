@@ -42,18 +42,17 @@
 #'     https://github.com/rworkflow/ReUseDataRecipe/blob/master/reference_genome.R
 #' @export
 #' @examples
-#'
+#' \dontrun{
 #' library(Rcwl)
-#'
 #' ##############
 #' ### example 1
 #' ##############
 #' 
-#' script <- '
+#' script <- "
 #' input=$1
 #' outfile=$2
-#' echo "Print the input: $input" > $outfile.txt
-#' '
+#' echo \"Print the input: $input\" > $outfile.txt
+#' "
 #' rcp <- recipeMake(shscript = script,
 #'                   paramID = c("input", "outfile"),
 #'                   paramType = c("string", "string"),
@@ -67,7 +66,7 @@
 #'                notes = c("echo", "hello", "world", "txt"),
 #'                showLog = TRUE)
 #' readLines(res$out)
-#' 
+#'
 #' ##############
 #' ### example 2
 #' ##############
@@ -84,7 +83,6 @@
 #' Rcwl::inputs(rcp)
 #' rcp$species <- "human"
 #' rcp$version <- "42"
-#' \dontrun{
 #' res <- getData(rcp,
 #'         outdir = tempdir(), 
 #'         notes = c("gencode", "transcripts", "human", "42"),
@@ -92,7 +90,6 @@
 #' res$output
 #' dir(tempdir())
 #' }
-#' 
 recipeMake <- function(shscript = character(),
                        paramID = c(),  
                        paramType = c(),
