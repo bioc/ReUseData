@@ -45,3 +45,4 @@ biocViews: Software, Infrastructure, DataImport, Preprocessing, ImmunoOncology
 License: GPL-3
 URL: https://github.com/rworkflow/ReUseData
 BugReports: https://github.com/rworkflow/ReUseData/issues
+Config/Bioconductor/UnsupportedPlatforms: windows
